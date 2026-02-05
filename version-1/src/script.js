@@ -14,8 +14,8 @@ parameters.branches = 3
 parameters.spin = 1
 parameters.randomness = 0.2
 parameters.randomnessPower = 3
-parameters.insideColour = '#ff4500'
-parameters.outsideColour = '#17388b'
+parameters.insideColour = '#ff6030'
+parameters.outsideColour = '#1b3984'
 
 
 let geometry = null 
@@ -73,9 +73,12 @@ const generateGalaxy = () => {
     positions[i3 + 1] = randomY
     positions[i3 + 2] = Math.sin(branchAngle + spinAngle) * radius + randomZ
     
-    colours[i3] = 1
-    colours[i3 + 1] = 0
-    colours[i3 + 2] = 0
+    const mixedColour = colourInside.clone()
+    mixedColour.lerp(colourOutside, radius / parameters.radius)
+
+    colours[i3] = mixedColour.r
+    colours[i3 + 1] = mixedColour.g
+    colours[i3 + 2] = mixedColour.b
   }
 
   geometry.setAttribute(

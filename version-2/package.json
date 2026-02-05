@@ -1,0 +1,20 @@
+{
+  "name": "universum",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "author": "Nick Rabone",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "lil-gui": "^0.20.0",
+    "three": "^0.174.0"
+  },
+  "devDependencies": {
+    "vite": "^6.2.2",
+    "vite-plugin-restart": "^0.4.2"
+  }
+}
